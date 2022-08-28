@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+.container{
+
+ margin: 20px auto;
+ padding: 20px;
+ border:  1px solid rgb(219, 210, 210);
+ 
+
+}
+ p{
+   
+   
+    color: rgb(115, 46, 194);
+  
+
+ }
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="container" id="container">
+
+<p>Parágrafo dentro da DIV</p>
+ <ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+
+
+ </ul>
+
+</div>
+
+
+
+<script>
+let div2 = document.querySelector('#container').cloneNode(true) // A mensagem verdadeira clona tudo, até o conteúdo dentro
+
+document.querySelector('#container').after(div2) //clonou depois
+
+let div3 = document.querySelector('#container').cloneNode(false) // Clona apenas a Div, sem o conteúdo
+document.querySelector('#container').before(div3) //clonou antes
+
+// div2.remove() remove a div 2
+ // document.querySelector('#container').remove() remove o div principal por completo
+ 
+
+ document.querySelector ('#container > p').remove() //removeu o parágrafo
+
+ document.querySelectorAll('#container > ul > li')[2].remove() //Removeu apenas o conteúdo item 3 da lista, pra isso utiliza a posição do array
+ // document.querySelectorAll('#container > ul > li:first-child').remove() // li:first-child remove o item 1, last-child ultimo elemento
+</script>
+
+
+</body>
